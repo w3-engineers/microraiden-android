@@ -2,6 +2,7 @@ Microraiden-Android
 ===============
 
 [![](https://jitpack.io/v/w3-engineers/microraiden-android.svg)](https://jitpack.io/#w3-engineers/microraiden-android)
+[![Build Status](https://travis-ci.com/w3-engineers/microraiden-android.svg?branch=master)](https://travis-ci.com/w3-engineers/microraiden-android)
 
 Microraiden-Android is a lightweight, cheap, low-latency modular Java and Android library, 
 which works with Smart contract and Ethereum network. This library reduces additional
