@@ -4,40 +4,17 @@ Microraiden-Android
 [![](https://jitpack.io/v/w3-engineers/microraiden-android.svg)](https://jitpack.io/#w3-engineers/microraiden-android)
 [![Build Status](https://travis-ci.com/w3-engineers/microraiden-android.svg?branch=master)](https://travis-ci.com/w3-engineers/microraiden-android)
 
-Microraiden-Android is a lightweight, cheap, low-latency modular Java and Android library, 
-which works with Smart contract and Ethereum network. This library reduces additional
-overhead to write smart contract and own integration code for this platform.
+Micro Raiden is many to one unidirectional state channel protocol system and its off-chain transaction do not cost anything, exchange confined between sender and receiver.
+See [µRaiden documentation](https://microraiden.readthedocs.io/) for getting more information about Microraiden
 
-Feature
--------
+What is Microraiden-Android?
+----------------------------
 
- - Balance proof signature
- - Closing hash generate
- - Smart contract has been deployed on the main net
+Micro Raiden-Android is a java based Android library of µRaiden, which works with µRaiden Smart contract and Ethereum network. 
+So far this library covers the Balance proof signature, Closing hash generation and java api's those are implemented by [Microraiden](https://github.com/raiden-network/microraiden).
  
 It has a runtime dependency: 
  - [Web3j](https://github.com/web3j/web3j) for connecting and communicating with blockchain
-
-Microraiden overview
----------------------
-
-Microraiden is many to one unidirectional state channel protocol system and its off-chain transaction do not cost anything, 
-exchange confined between sender and receiver.
-
-### Token
-Own token uses in Microraiden for payment process. Which is [ERC20](https://github.com/ethereum/EIPs/issues/20) and [ERC223](https://github.com/ethereum/EIPs/issues/223) consequent.
-
-In a nutshell, a client(Sender) wants to access the payable shared resource, and a provider(Receiver) is open to share his resource
-and wants to get paid with number of tokens. And a third party (Microraiden) takes the authority to manage every single transaction between them.
-
-### Off-chain transaction
-The system lies sender to receiver off-chain transaction. They keep track of the last transaction information 
-and channel balance in a secure way. The channel balance is calculated each time on the sender used resource amount. 
-Sender prepares a sign(Balance Proof) message that confirms the total amount of token. 
-Then the balance proof sends to receiver server. Balance proof comparing the last received balance with sender signature. 
-If everything is okay then receiver updates old balance to the new balance.
-
-[µRaiden documentation](https://microraiden.readthedocs.io/) for getting more information about Microraiden
 
 Getting started
 ---------------
@@ -64,7 +41,7 @@ For using microraiden library your project need to **Java 8 Compatibility** supp
 - For initializing `Microraiden`, you have to need a channel address, rpc url and set a gas price with a gas limit. 
 Provide a `MicroraidenListener` listener during initialization.
 ```
-new Microraiden(channelAddress, web3jRpcURL, mGasPrice, mGasLimit, this)
+    microraiden = new Microraiden(channelAddress, web3jRpcURL, mGasPrice, mGasLimit, this)
 ```
 Acquainted with following variables for accessing microraiden API’s
 
